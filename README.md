@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18162032&assignment_repo_type=AssignmentRepo)
 # Rock-Paper-Scissors-Game
 
 - In this project, you will be building a rock paper scissors game using JavaScript. The game will involve two players who will each select one of three options - rock, paper, or scissors - and the winner will be determined by a set of rules that you will create. This project is designed to help you gain proficiency in JavaScript programming and apply your knowledge to a practical project.
