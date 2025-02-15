@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R-P-S Game</title>
+
+</head>
+
+<body class="bg-gradient-to-l from-[#161635] to-[#1b2e4b]">
+  <div class="text-white w-full flex flex-col justify-center items-center mt-10">
+    <div class="title flex justify-between items-center border-2 border-[#fff] rounded-2xl px-7 py-5 w-200">
+      <div class="title-name">
+      <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">ROCK</p>
+      <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">PAPER</p>
+      <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">SCISSORS</p>
+      </div>
+      <div class="score-card bg-[#fff] text-[#1b2e4b] px-4 py-4 rounded-2xl flex flex-col gap-2 justify-center items-center">
+        <p class="title-item text-lg subpixel-antialiased tracking-wide">Score</p>
+        <p class="current-score text-4xl font-semibold">4</p>
+      </div>
+    </div>
+    <div class="playing-cards-container w-200 flex flex-wrap justify-center items-center gap-28 my-20">
+      <div class="card-item pr-10">
+        <div class="icon-color-container bg-[#ffaa00] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
+          <img src="./assets/icons/fist.png" alt="A icon of the game icons" class="icons w-40 h-40 bg-[#fff] rounded-full p-7 object-fill">
+        </div>
+      </div>
+      <div class="card-item pl-10">
+        <div class="icon-color-container bg-[#5555ff] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
+          <img src="./assets/icons/hand-paper.png" alt="A icon of the game icons" class="icons w-40 h-40 bg-[#fff] rounded-full p-7 object-contain">
+        </div>
+      </div>
+      <div class="card-item ">
+        <div class="icon-color-container bg-[#ff2a2e] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
+          <img src="./assets/icons/scissors.png" alt="A icon of the game icons" class="icons w-40 h-40 bg-[#fff] rounded-full p-7 object-fill">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
