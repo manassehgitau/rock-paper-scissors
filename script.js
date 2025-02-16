@@ -47,7 +47,7 @@ function checkTotalAttempts(){
        </button>
       </div>
     `
-    delayResult(3000);
+    // delayResult(3000);
     currentScore = 0;
     saveScore();
     updateScore();
