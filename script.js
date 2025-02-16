@@ -49,6 +49,7 @@ function checkTotalAttempts(){
     `
     // delayResult(3000);
     currentScore = 0;
+    totalAttempts = 0;
     saveScore();
     updateScore();
     loadScore();
