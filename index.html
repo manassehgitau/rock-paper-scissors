@@ -5,50 +5,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>R-P-S Game</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="./assets/icons/rock-paper-scissors.png">
 </head>
 
 <!-- TODO: Improve the UI in small screens -->
- <!-- TODO: Add animations to the buttons when clicked, hovered e.t.c -->
-  <!-- TODO: create a better header and add a new footer amd improve UI -->
+<!-- TODO: Add animations to the buttons when clicked, hovered e.t.c -->
+<!-- TODO: create a better header and add a new footer amd improve UI -->
+
 <body class="bg-gradient-to-l from-[#161635] to-[#1b2e4b]">
-  <div class="text-white w-full flex flex-col justify-center items-center mt-10">
+  <!-- Loading animation -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+  <div class="text-white w-full h-5/6 flex flex-col justify-center items-center mt-10">
     <div class="title flex justify-between items-center border-2 border-[#fff] rounded-2xl px-7 py-5 w-200">
       <div class="title-name">
-      <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">ROCK</p>
-      <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">PAPER</p>
-      <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">SCISSORS</p>
+        <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">ROCK</p>
+        <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">PAPER</p>
+        <p class="title-item text-2xl subpixel-antialiased font-bold tracking-wide">SCISSORS</p>
       </div>
-      <div class="score-card bg-[#fff] text-[#1b2e4b] px-4 py-4 rounded-2xl flex flex-col gap-2 justify-center items-center">
+      <div
+        class="score-card bg-[#fff] text-[#1b2e4b] px-4 py-4 rounded-2xl flex flex-col gap-2 justify-center items-center">
         <p class="title-item text-lg subpixel-antialiased tracking-wide">Score</p>
         <p class="current-score text-4xl font-semibold">-</p>
       </div>
+      <div class="restart-game-icon">
+        <button onclick="restartGame()" class="my-2">
+          <img src="./assets/icons/refresh.png" alt="A icon of the game icons"
+            class="icons w-20 h-20 bg-[#fff] rounded-full p-7 object-contain">
+        </button>
+      </div>
     </div>
-    <div class="playing-cards-container w-200 flex flex-wrap justify-center items-center gap-28 my-20">
+    <div class="playing-cards-container w-220 flex flex-wrap justify-center items-center gap-28 my-20">
       <div class="card-item pr-10">
-        <div class="icon-color-container bg-[#ffaa00] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
+        <div
+          class="icon-color-container bg-[#ffaa00] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
           <button class="icon-button" onclick="rockLogic()">
-            <img src="./assets/icons/fist.png" alt="A icon of the game icons" class="icons w-45 h-45 bg-[#fff] rounded-full p-7 object-fill">
+            <img src="./assets/icons/fist.png" alt="A icon of the game icons"
+              class="icons w-45 h-45 bg-[#fff] rounded-full p-7 object-fill">
           </button>
         </div>
       </div>
       <div class="card-item pl-10">
-        <div class="icon-color-container bg-[#5555ff] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
+        <div
+          class="icon-color-container bg-[#5555ff] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
           <button class="icon-button" onclick="paperLogic();">
-            <img src="./assets/icons/hand-paper.png" alt="A icon of the game icons" class="icons w-45 h-45 bg-[#fff] rounded-full p-7 object-contain">
+            <img src="./assets/icons/hand-paper.png" alt="A icon of the game icons"
+              class="icons w-45 h-45 bg-[#fff] rounded-full p-7 object-contain">
           </button>
         </div>
       </div>
       <div class="card-item ">
-        <div class="icon-color-container bg-[#ff2a2e] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
+        <div
+          class="icon-color-container bg-[#ff2a2e] rounded-full w-50 h-50 flex justify-center items-center shadow-2xl">
           <button class="icon-button" onclick="scissorsLogic()">
-            <img src="./assets/icons/scissors.png" alt="A icon of the game icons" class="icons w-45 h-45 bg-[#fff] rounded-full p-7 object-fill">
+            <img src="./assets/icons/scissors.png" alt="A icon of the game icons"
+              class="icons w-45 h-45 bg-[#fff] rounded-full p-7 object-fill">
           </button>
         </div>
       </div>
     </div>
   </div>
+
+  <footer
+    class="footer text-white text-md flex flex-row justify-around items-center border-2 border-white mx-20 mb-5 px-10 rounded-2xl">
+    <div class="copyright">
+      <p class="statement">&copy; Manasseh Gitau</p>
+    </div>
+
+    <div class="restart">
+      <button onclick="restartGame()" class="my-2">
+        Restart Game
+      </button>
+    </div>
+  </footer>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="./script.js"></script>
 </body>
