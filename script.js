@@ -15,14 +15,19 @@ function updateScore() {
 }
 function loadScore() {
   const storedScores = localStorage.getItem("currentScore");
+  const storedAttemptScore = localStorage.getItem("totalAttempts");
   if (storedScores) {
     currentScore = JSON.parse(storedScores);
     updateScore();
+  }
+  if (storedAttemptScore){
+    totalAttempts = JSON.parse(storedAttemptScore);
   }
 }
 
 function saveScore() {
   localStorage.setItem("currentScore", JSON.stringify(currentScore));
+  localStorage.setItem("totalAttempts", JSON.stringify(totalAttempts));
 }
 
 function sleep(ms) {
